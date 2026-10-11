@@ -24,8 +24,8 @@ echo.
 echo  [5] Rebuild Static Export (Updates static_export folder)
 echo      - Recompiles all HTML/CSS/JS and 3D assets
 echo.
-echo  [6] Initialize Git Repository and Commit
-echo      - Prepares this folder for GitHub / GitLab
+echo  [6] Push to GitHub
+echo      - Prompts for your GitHub repository URL and pushes automatically
 echo.
 echo  [7] Open Deployment Guide
 echo.
@@ -104,16 +104,39 @@ goto MENU
 
 :GIT_INIT
 echo.
-echo Initializing Git repository...
-git init
-git add .
-git commit -m "feat: production portfolio deployment setup"
+echo =====================================================================
+echo                     PUSH PORTFOLIO TO GITHUB
+echo =====================================================================
 echo.
-echo Git initialized and initial commit created!
-echo To push to your GitHub:
-echo   git remote add origin https://github.com/shawez-khan/YOUR-REPO-NAME.git
-echo   git branch -M main
-echo   git push -u origin main
+echo Make sure you have created an empty repository on https://github.com/new
+echo Example URL: https://github.com/shawez-khan/portfolio.git
+echo.
+set /p repo_url="Enter your GitHub repository URL (or press Enter to cancel): "
+if "%repo_url%"=="" goto MENU
+
+echo.
+echo Adding remote origin: %repo_url%
+git remote remove origin >nul 2>nul
+git remote add origin %repo_url%
+git branch -M main
+
+echo Staging any recent changes...
+git add .
+git commit -m "feat: portfolio production deployment" >nul 2>nul
+
+echo.
+echo Pushing to GitHub (main branch)...
+git push -u origin main
+
+if %errorlevel%==0 (
+    echo.
+    echo =====================================================================
+    echo SUCCESS: Your portfolio has been pushed to GitHub!
+    echo =====================================================================
+) else (
+    echo.
+    echo NOTE: If prompted to log in, please sign in via browser or Personal Access Token.
+)
 echo.
 pause
 goto MENU
