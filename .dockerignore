@@ -1,7 +1,0 @@
-node_modules
-.next
-.git
-static_export
-resumes
-*.log
-.DS_Store
