@@ -1,0 +1,82 @@
+{
+  "personal": {
+    "name": "MOHAMMED SHAWEZ KHAN",
+    "title": "Data Science & Machine Learning Practitioner",
+    "location": "Indore, MP, India",
+    "phone": "+91 9285510004",
+    "email": "skhan200609@gmail.com",
+    "linkedin": "https://linkedin.com/in/shawezkhan",
+    "github": "https://github.com/shawezkhan",
+    "portfolio": "https://shawez.dev"
+  },
+  "summary": "Computer Science & Biotechnology student specializing in Machine Learning, Exploratory Data Analysis (EDA), Predictive Analytics, and AI Quality Engineering. Hands-on experience with Python, SQL, Scikit-learn, PyTorch, Pandas, and Power BI. Proven track record in developing machine learning models, structuring ETL data pipelines, fine-tuning LLM response evaluations, and extracting actionable business insights from complex datasets.",
+  "skills": {
+    "data_science_ml": ["Machine Learning", "Exploratory Data Analysis (EDA)", "Predictive Analytics", "Feature Engineering", "Classification", "Regression", "Clustering", "Deep Learning (CNNs)", "Model Evaluation (ROC-AUC, F1-Score, RMSE)"],
+    "programming_db": ["Python (Pandas, NumPy, Scikit-learn, PyTorch, OpenCV, Matplotlib, Seaborn)", "SQL (MySQL, PostgreSQL)", "MongoDB", "C++"],
+    "analytics_bi": ["Excel (Advanced Functions, Pivot Tables)", "Power BI", "Tableau", "Statistical Modeling", "Data Preprocessing & Cleaning"],
+    "tools_platforms": ["Jupyter Notebook", "Google Colab", "GCP (Vertex AI, BigQuery)", "Git", "GitHub", "VS Code"],
+    "ai_llm_workflows": ["Prompt Engineering", "RLHF Evaluation", "Ground Truth Validation", "Data Annotation Quality Audit"]
+  },
+  "experience": [
+    {
+      "role": "Data Science Intern",
+      "company": "Averixis Solutions Pvt. Ltd. (Google Cloud Collaboration)",
+      "location": "Indore, India",
+      "period": "June 2024 – Present",
+      "highlights": [
+        "Designed and executed end-to-end data preprocessing and cleaning pipelines in Python (Pandas/NumPy), improving dataset quality by 25% across 50,000+ raw data records.",
+        "Built, tuned, and evaluated supervised machine learning models (Random Forest, XGBoost, Logistic Regression) achieving 88%+ accuracy on real-world classification tasks.",
+        "Utilized Google Cloud Platform (GCP BigQuery & Vertex AI) to perform cloud-based querying, automated model training, and metric logging.",
+        "Created interactive exploratory data analysis (EDA) reports and statistical charts using Matplotlib and Seaborn to communicate data insights to key stakeholders."
+      ]
+    },
+    {
+      "role": "AI Data & LLM Quality Contributor",
+      "company": "Outlier AI & OneForma",
+      "location": "Remote",
+      "period": "Jan 2024 – Present",
+      "highlights": [
+        "Contributed 30+ hours to RLHF (Reinforcement Learning from Human Feedback) workflows, auditing AI-generated responses for factual accuracy, reasoning, and prompt compliance.",
+        "Curated high-precision ground-truth datasets for computer vision (segmentation, bounding boxes) and NLP classification tasks.",
+        "Evaluated search relevance ratings and audio transcription accuracy, ensuring high data fidelity for machine learning training pipelines."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AI-Generated Face Detection Classifier",
+      "tech": "Python, PyTorch, OpenCV, Scikit-learn",
+      "highlights": [
+        "Constructed a Deep Learning CNN image classification architecture in PyTorch to detect synthetic (AI-generated) vs. authentic human faces.",
+        "Applied data augmentation, image normalization, and feature extraction via OpenCV, reaching 91.5% classification accuracy and 0.93 ROC-AUC score."
+      ]
+    },
+    {
+      "name": "Predictive Churn & Survival Analytics Engine",
+      "tech": "Python, Scikit-learn, XGBoost, Feature Engineering",
+      "highlights": [
+        "Engineered a predictive risk & survival model evaluating customer demographic and behavioral patterns using Random Forest and XGBoost.",
+        "Performed feature scaling, missing value handling, and GridSearchCV hyperparameter optimization, boosting baseline model F1-score by 14%."
+      ]
+    },
+    {
+      "name": "E-Commerce Insights & SQL Analytics Dashboard",
+      "tech": "SQL (MySQL), Power BI, Excel",
+      "highlights": [
+        "Developed an automated Power BI dashboard tracking transactional KPIs, customer lifetime value, and monthly revenue trends.",
+        "Wrote complex SQL queries featuring JOINs, CTEs, and aggregation functions to extract clean metrics from multi-table database schemas."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Science in Computer Science & Biotechnology",
+    "institution": "Acropolis Institute of Management Studies and Research",
+    "location": "Indore, MP, India",
+    "period": "2024 – 2027"
+  },
+  "certifications": [
+    "Advanced Data Science & AI/ML Course",
+    "Microsoft Excel Specialist Certification",
+    "Algorithm and Logic Development Workshop"
+  ]
+}

@@ -1,0 +1,351 @@
+/* app/globals.css — Global styles and design tokens */
+/* Fonts (Orbitron, Inter, JetBrains Mono) are loaded via <link> in app/layout.tsx */
+
+@import "tailwindcss";
+
+/* ─── Technova Custom Font ─── */
+@font-face {
+  font-family: "Technova";
+  src: url("/fonts/Technova.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-technova {
+  font-family: "Technova", "Orbitron", sans-serif;
+}
+
+
+/* ─── Razor-Sharp ASCII Matrix Styling ─── */
+canvas + table,
+canvas + div,
+div:has(> table),
+table,
+table tr,
+table td {
+  font-family: 'JetBrains Mono', 'Courier New', monospace !important;
+  font-size: 10px !important;
+  line-height: 0.72em !important;
+  letter-spacing: -0.05em !important;
+  font-weight: 800 !important;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important;
+}
+
+/* ─── Mode Toggle Safe Zone ─── */
+/*
+  The fixed side-toggle is ~58px wide at right: 0.
+  On mobile (<768px) the toggle overlaps content, so main wrappers
+  use has-side-toggle to add 64px right padding.
+  On md+ screens the max-w-6xl content area sits safely left of the toggle.
+*/
+
+/* Utility: apply to page main wrappers for toggle clearance on mobile */
+.has-side-toggle {
+  padding-right: 64px;
+}
+@media (min-width: 768px) {
+  .has-side-toggle {
+    padding-right: 0;
+  }
+}
+
+/* ─── Design Tokens ─── */
+:root {
+  --cyan: #00d4ff;
+  --cyan-dim: #0891b2;
+  --cyan-glow: rgba(0, 212, 255, 0.4);
+  --cyan-subtle: rgba(0, 212, 255, 0.08);
+  --orange: #ff6b35;
+  --orange-dim: #c2440e;
+  --orange-glow: rgba(255, 107, 53, 0.3);
+  --bg: #050810;
+  --bg-secondary: #07091a;
+  --surface: #0a0f1e;
+  --surface-raised: #0d1628;
+  --glass: rgba(0, 212, 255, 0.04);
+  --glass-hover: rgba(0, 212, 255, 0.08);
+  --border: rgba(0, 212, 255, 0.12);
+  --border-bright: rgba(0, 212, 255, 0.3);
+  --text-primary: #e8f4f8;
+  --text-secondary: rgba(232, 244, 248, 0.6);
+  --text-muted: rgba(232, 244, 248, 0.35);
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+/* ─── Reset & Base ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cyan-dim);
+  border-radius: 2px;
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(0, 212, 255, 0.2);
+  color: var(--cyan);
+}
+
+/* ─── Utility classes ─── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.text-cyan {
+  color: var(--cyan);
+}
+
+.text-orange {
+  color: var(--orange);
+}
+
+.border-cyan {
+  border-color: var(--border);
+}
+
+/* ─── Grid overlay ─── */
+.hud-grid {
+  background-image:
+    linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ─── Glow effects ─── */
+.glow-cyan {
+  box-shadow:
+    0 0 20px rgba(0, 212, 255, 0.15),
+    0 0 40px rgba(0, 212, 255, 0.05);
+}
+
+.glow-orange {
+  box-shadow:
+    0 0 20px rgba(255, 107, 53, 0.15),
+    0 0 40px rgba(255, 107, 53, 0.05);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+}
+
+/* ─── Glass panel ─── */
+.glass-panel {
+  background: var(--glass);
+  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-panel:hover {
+  background: var(--glass-hover);
+  border-color: var(--border-bright);
+}
+
+/* ─── Corner decorations ─── */
+.corner-tl::before,
+.corner-br::after {
+  content: "";
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-color: var(--cyan);
+}
+
+.corner-tl::before {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid;
+  border-left: 2px solid;
+}
+
+.corner-br::after {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+}
+
+/* ─── Scan line animation ─── */
+@keyframes scanLine {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+.scan-line {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  animation: scanLine 8s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.3;
+}
+
+/* ─── Pulse animations ─── */
+@keyframes pulse-cyan {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.pulse {
+  animation: pulse-cyan 2s ease-in-out infinite;
+}
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ─── HUD line decoration ─── */
+.hud-line {
+  position: relative;
+}
+.hud-line::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--cyan), transparent);
+}
+
+/* ─── Section spacing ─── */
+.section-padding {
+  padding: 120px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 0;
+  }
+}
+
+/* ─── Gradient overlays ─── */
+.gradient-to-transparent {
+  background: linear-gradient(to bottom, transparent, var(--bg));
+}
+
+/* ─── Noise texture overlay ─── */
+.noise-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  pointer-events: none;
+}
+
+/* ─── Status dot ─── */
+@keyframes statusPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.5; }
+}
+
+.status-dot {
+  animation: statusPulse 2s ease-in-out infinite;
+}
+
+/* ─── Loading bar ─── */
+@keyframes loadBar {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+.load-bar {
+  animation: loadBar 2s ease-out forwards;
+}
+
+/* ─── Shimmer ─── */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 212, 255, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ─── Hexagon clip ─── */
+.hex-clip {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+/* ─── Typing cursor ─── */
+@keyframes cursor {
+  0%, 100% { border-color: var(--cyan); }
+  50% { border-color: transparent; }
+}
+
+/* ─── Rotating border ─── */
+@keyframes rotateBorder {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotate-slow {
+  animation: rotateBorder 20s linear infinite;
+}
+
+/* ─── Floating ─── */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
